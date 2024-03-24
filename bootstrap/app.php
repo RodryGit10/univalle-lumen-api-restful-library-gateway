@@ -61,6 +61,11 @@ $app->singleton(
 
 $app->configure('app');
 
+$app->configure('auth');
+
+$app->configure('services');
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -78,7 +83,9 @@ $app->configure('app');
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    'client.credentials' => Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
 ]);
+
 
 /*
 |--------------------------------------------------------------------------
