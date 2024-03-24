@@ -63,7 +63,7 @@ $app->configure('app');
 
 $app->configure('auth');
 
-$app->configure('services');
+$app->configure('services');  // Implementado
 
 
 /*

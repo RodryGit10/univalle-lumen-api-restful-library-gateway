@@ -25,4 +25,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/users/exists', 'UserController@exists');
         $router->post('/users', 'UserController@store');
     });
+
+    $router->group(['middleware' => 'auth', 'prefix' => 'v1'], function () use ($router) {
+        $router->get('/authors', ['uses' => 'AuthorController@index']);
+    });
 });
